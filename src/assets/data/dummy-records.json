@@ -1,0 +1,102 @@
+[
+    {
+        "item": 1,
+        "First_Name": "Edgar",
+        "Middle_Name": "Chagwa",
+        "Last_Name": "Lungu",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 2,
+        "First_Name": "Ester",
+        "Middle_Name": "",
+        "Last_Name": "Lungu",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 3,
+        "First_Name": "Tasila",
+        "Middle_Name": "",
+        "Last_Name": "Lungu",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date Added": "22.04.2024"
+    },
+    {
+        "item": 4,
+        "First_Name": "Miles",
+        "Middle_Name": "Bwalya",
+        "Last_Name": "Sampa",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 5,
+        "First_Name": "Geofrey",
+        "Middle_Name": "Bwalya",
+        "Last_Name": "Mwamba",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 6,
+        "First_Name": "Bowman",
+        "Middle_Name": "Chitoshi",
+        "Last_Name": "Lusambo",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 7,
+        "First_Name": "Fred",
+        "Middle_Name": "",
+        "Last_Name": "Membe",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 8,
+        "First_Name": "Kingsley",
+        "Middle_Name": "",
+        "Last_Name": "Chanda",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 9,
+        "First_Name": "Emmanuel",
+        "Middle_Name": "",
+        "Last_Name": "Mwamba",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    },
+    {
+        "item": 10,
+        "First_Name": "Dora",
+        "Middle_Name": "",
+        "Last_Name": "Siliya",
+        "Country": "Zambia",
+        "Identification_Number": "123456/01/1",
+        "Status": "Polictically exposed person",
+        "Date_Added": "22.04.2024"
+    }
+]
