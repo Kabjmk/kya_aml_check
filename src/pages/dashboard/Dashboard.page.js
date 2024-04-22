@@ -2,10 +2,16 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { RecordsTable } from '../../components/records-table/RecordsTable.comp';
 import records from "../../assets/data/dummy-records.json";
+import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb';
 
 export const Dashboard = () => {
   return (
     <Container>
+        <Row>
+            <Col>
+                <PageBreadcrumb page="Dashboard"/>
+            </Col>
+        </Row>
         <Row>
             <Col className="text-center mt-5 mb-2">
             <Button variant="info" style={{"fontSize":"2rem", padding: "10px 30px"}}>Add New Record</Button>
