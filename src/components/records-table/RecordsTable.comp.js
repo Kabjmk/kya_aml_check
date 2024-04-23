@@ -1,5 +1,6 @@
 import React from 'react'
 import {Table} from 'react-bootstrap';
+import ProptTypes from "prop-types";
 
 
 export const RecordsTable = ({records}) => {
@@ -39,4 +40,8 @@ export const RecordsTable = ({records}) => {
         </tbody>
     </Table>
   )
+};
+
+RecordsTable.propTypes = {
+    records: ProptTypes.array.isRequired,
 }
