@@ -8,6 +8,8 @@ const initialFrmDt = {
     middle_name: "",
     last_name: "",
     details:"",
+    dateOfBirth:"",
+    country:"",
 };
 
 export const AddRecord = () => {
