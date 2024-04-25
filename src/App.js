@@ -4,6 +4,7 @@ import './App.css';
 //import {AddRecord} from "./pages/new-record/AddRecord.page";
 import { DefaultLayout } from "./layout/DefaultLayout"; 
 import {RecordLists } from "./pages/record-list/RecordLists.page";
+import {Record } from "./pages/record/Record.page";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <DefaultLayout>
         {/* <Dashboard /> */}
         {/* <AddRecord /> */}
-        <RecordLists />
+        {/* <RecordLists /> */}
+        <Record />
       </DefaultLayout>
     </div>
   );
