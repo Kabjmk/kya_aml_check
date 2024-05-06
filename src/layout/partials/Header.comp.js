@@ -3,8 +3,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from "../../assets/img/Mytalu_Logo.png";
+import { useNavigate } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const logMeOut = () => {
+    navigate("/");
+  };
+
   return (
     <Navbar collapseOnSelect bg="info"  variant="dark" expand="md">
         <Navbar.Brand>
@@ -13,14 +21,16 @@ export const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" >
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-            <NavDropdown title="Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Create New Record</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2"> Import A Record</NavDropdown.Item>
+            <LinkContainer to="home"><Nav.Link >Home</Nav.Link></LinkContainer>
+            <LinkContainer to="dashboard"><Nav.Link>Dashboard</Nav.Link></LinkContainer>
+            <LinkContainer to="record-list"><Nav.Link>Records</Nav.Link></LinkContainer>
+            <NavDropdown title="New Record" id="basic-nav-dropdown">
+              <LinkContainer to="add-record"><NavDropdown.Item >Add New Record</NavDropdown.Item></LinkContainer>
+              <LinkContainer to=""><NavDropdown.Item> Import A Record</NavDropdown.Item></LinkContainer>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Logout </NavDropdown.Item>
+              <LinkContainer to=""><NavDropdown.Item >Delete Record </NavDropdown.Item></LinkContainer>
             </NavDropdown>
+            <Nav.Link onClick={logMeOut}>Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
     </Navbar>

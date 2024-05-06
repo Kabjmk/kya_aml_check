@@ -4,6 +4,8 @@ import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb'
 import { SearchForm } from '../../components/search-form/SearchForm.comp'
 import {RecordsTable} from "../../components/records-table/RecordsTable.comp"
 import records from "../../assets/data/dummy-records.json";
+import { Link } from 'react-router-dom';
+
 
 export const RecordLists = () => {
   const [str, setstr] = useState("");
@@ -34,7 +36,9 @@ export const RecordLists = () => {
       </Row>
       <Row className="mt-4">
         <Col>
+        <Link to="/add-record">
           <Button variant="info">Add New Record</Button>
+          </Link>
         </Col>
         <Col className="text-end">
           <SearchForm 

@@ -34,7 +34,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaitig investigation"
+            }
+        ]
     },
     {
         "item": 3,
@@ -44,7 +61,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date Added": "22.04.2024"
+        "Date Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaitig investigation"
+            }
+        ]
     },
     {
         "item": 4,
@@ -54,7 +88,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaitig investigation"
+            }
+        ]
     },
     {
         "item": 5,
@@ -64,7 +115,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaiting investigation"
+            }
+        ]
     },
     {
         "item": 6,
@@ -74,7 +142,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaiting investigation"
+            }
+        ]
     },
     {
         "item": 7,
@@ -84,7 +169,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaiting clearance"
+            }
+        ]
     },
     {
         "item": 8,
@@ -94,7 +196,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaitig investigation"
+            }
+        ]
     },
     {
         "item": 9,
@@ -104,7 +223,24 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "awaitig investigation"
+            }
+        ]
     },
     {
         "item": 10,
@@ -114,6 +250,23 @@
         "Country": "Zambia",
         "Identification_Number": "123456/01/1",
         "Status": "Polictically exposed person",
-        "Date_Added": "22.04.2024"
+        "Date_Added": "22.04.2024",
+        "history": [
+            {
+                "date": "22-04-2024",
+                "messageBy": "admin",
+                "message": "upto date"
+            },
+            {
+                "date": "23-04-2024",
+                "messageBy": "legal officer",
+                "message": "records being awaited"
+            },
+            {
+                "date": "24-04-2024",
+                "messageBy": "compliance officer",
+                "message": "gathering evidence"
+            }
+        ]
     }
 ]

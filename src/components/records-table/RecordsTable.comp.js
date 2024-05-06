@@ -1,6 +1,7 @@
 import React from 'react'
 import {Table} from 'react-bootstrap';
 import ProptTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 
 export const RecordsTable = ({records}) => {
@@ -20,11 +21,11 @@ export const RecordsTable = ({records}) => {
         </thead>
         <tbody> 
             {records.length ? (records.map((row)=>
-            (<tr key={row.id}>
+            (<tr key={row.item}>
                 <td>{row.item}</td>
-                <td>{row.First_Name}</td>
-                <td>{row.Middle_Name}</td>
-                <td>{row.Last_Name}</td>  
+                <td><Link to={`/record/${row.item}`}>{row.First_Name}</Link></td>
+                <td><Link to={`/record/${row.item}`}>{row.Middle_Name}</Link></td>
+                <td><Link to={`/record/${row.item}`}>{row.Last_Name}</Link></td>  
                 <th>{row.Country}</th>
                 <td>{row.Identification_Number}</td>
                 <th>{row.Status}</th>
@@ -32,7 +33,7 @@ export const RecordsTable = ({records}) => {
             </tr>)))
             : 
             <tr>
-                <td colSpan={8} className="text-center">No records to show</td>
+                <td colSpan={4} className="text-center">No records to show</td>
             </tr>
             }
             
