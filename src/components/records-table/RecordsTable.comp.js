@@ -1,10 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import {Table} from 'react-bootstrap';
-import ProptTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 
-export const RecordsTable = ({records}) => {
+export const RecordsTable = () => {
+
+    const {searchRecordList, isLoading, error} = useSelector((state) => state.records);
+
+    if(isLoading) return <h3>Loading ....</h3>
+
+    if(error) return <h3>{error}</h3>
+   
   return (
     <Table striped border hover>
         <thead>
@@ -16,33 +23,28 @@ export const RecordsTable = ({records}) => {
                 <th>Country</th>
                 <th>Identifcation Number</th>
                 <th>Status</th>
-                <th>Date Created</th>
+                <th>Date of Birth</th>
             </tr>
         </thead>
         <tbody> 
-            {records.length ? (records.map((row)=>
-            (<tr key={row.item}>
-                <td>{row.item}</td>
-                <td><Link to={`/record/${row.item}`}>{row.First_Name}</Link></td>
-                <td><Link to={`/record/${row.item}`}>{row.Middle_Name}</Link></td>
-                <td><Link to={`/record/${row.item}`}>{row.Last_Name}</Link></td>  
+            {searchRecordList.length ? (searchRecordList.map((row)=>
+            (<tr key={row._id}> 
+                <td>{row._id}</td>
+                <td><Link to={`/record/${row._id}`}>{row.First_Name}</Link></td>
+                <td><Link to={`/record/${row._id}`}>{row.Middle_Name}</Link></td>
+                <td><Link to={`/record/${row._id}`}>{row.Last_Name}</Link></td>  
                 <th>{row.Country}</th>
                 <td>{row.Identification_Number}</td>
                 <th>{row.Status}</th>
-                <th>{row.Date_Added}</th> 
+                <th>{row.dateOfbirth}</th> 
             </tr>)))
             : 
             <tr>
-                <td colSpan={4} className="text-center">No records to show</td>
+                <td colSpan="4" className="text-center">No records to show{" "}</td>
             </tr>
-            }
-            
-            
+            } 
         </tbody>
     </Table>
   )
 };
 
-RecordsTable.propTypes = {
-    records: ProptTypes.array.isRequired,
-}

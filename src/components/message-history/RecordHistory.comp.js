@@ -18,5 +18,5 @@ export const RecordHistory = ({msg}) => {
 
 
 RecordHistory.propTypes = {
-    msg: PropTypes.array.isRequired,
+    msg: PropTypes.string.isRequired,
 };

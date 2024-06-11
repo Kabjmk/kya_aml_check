@@ -15,7 +15,7 @@ const [record, setRecord] = useState("")
 
 useEffect(() => {
     for (let i = 0; i < records.length; i++) {
-        if(records[i].item == rId) {
+        if(records[i].item === rId) {
             setRecord(records[i]);
             continue;
         }
@@ -38,7 +38,7 @@ const handleOnSubmit = () => {
             </Col>
         </Row>
         <Row>
-            <Col className="text-weight-bolder text-secondary">
+            <Col className="text-weight-bolder text-secondary"> 
                 <div className="firstName">First Name: {record.First_Name}</div>
                 <div className="middleName">Middle Name: {record.Middle_Name}</div>
                 <div className="lastName">Last Name: {record.Last_Name}</div>
@@ -52,7 +52,7 @@ const handleOnSubmit = () => {
         </Row>
         <Row className="mt-4">
             <Col>
-                <RecordHistory msg={record.history}/>
+                {record.history && <RecordHistory msg={record.history}/>}
             </Col>
         </Row>
         <hr />
