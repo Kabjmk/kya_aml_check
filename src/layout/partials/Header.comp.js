@@ -11,6 +11,7 @@ export const Header = () => {
 
   const logMeOut = () => {
     sessionStorage.removeItem('accessJWT');
+    localStorage.removeItem('kycSite');
     navigate("/");
   };
 
