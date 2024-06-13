@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import {fetchAllRecords} from "./recordAction"; 
 import { Container, Row, Col, Button } from 'react-bootstrap'
@@ -7,14 +7,13 @@ import { SearchForm } from '../../components/search-form/SearchForm.comp'
 import {RecordsTable} from "../../components/records-table/RecordsTable.comp"
 import { Link } from 'react-router-dom';
 
-
 export const RecordLists = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAllRecords());
   }, [dispatch]);
-
+  
   return (
     <Container>
       <Row>
@@ -40,4 +39,4 @@ export const RecordLists = () => {
       </Row>
     </Container>
   )
-};
+}

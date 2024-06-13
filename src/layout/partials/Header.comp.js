@@ -10,6 +10,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const logMeOut = () => {
+    sessionStorage.removeItem('accessJWT');
     navigate("/");
   };
 
