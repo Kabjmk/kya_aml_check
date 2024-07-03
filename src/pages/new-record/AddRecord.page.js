@@ -1,40 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb';
 import {AddRecordForm} from "../../components/add-record-form/AddRecordForm.comp";
      
-const initialFrmDt = {
-    first_name: "",
-    middle_name: "",
-    last_name: "",
-    details:"",
-    dateOfBirth:"",
-    country:"",
-};
+
 
 export const AddRecord = () => {
-
-    const [frmData, setfrmData] = useState(initialFrmDt);
-
-    useEffect(() => {
-      
-    }, [frmData])
-
-    const handleOnChange = e => {
-        const {name, value} = e.target;
-
-    
-        setfrmData({
-            ...frmData,
-            [name]: value
-        })
-    };
-
-    const handleOnSubmit = e => {
-        e.preventDefault();
-
-        console.log("Record Submited", frmData);
-    };
 
   return (
     <Container>
@@ -45,11 +16,7 @@ export const AddRecord = () => {
         </Row>
         <Row>
             <Col>
-                <AddRecordForm 
-                handleOnChange={handleOnChange}
-                handleOnSubmit={handleOnSubmit}
-                frmDt = {frmData}
-                />  
+                <AddRecordForm/>  
             </Col>
         </Row>
     </Container>

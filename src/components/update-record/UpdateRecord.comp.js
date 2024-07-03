@@ -1,15 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Form, Button } from 'react-bootstrap'
 import PropTypes from "prop-types";
+import { useSelector, useDispatch } from 'react-redux';
+import { replyOnRecord } from '../../pages/record-list/recordAction';
 
-export const UpdateRecord = ({msg, handleOnChange, handleOnSubmit}) => {
+export const UpdateRecord = ({_id}) => {
+ 
+  const dispatch = useDispatch();
 
+  const {user: {name}} = useSelector(state => state.user);
+
+  const [Message, setMessage] = useState("");
+
+  const handleOnChange = (e) => {
+    setMessage(e.target.value)
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const msgObj = {
+      Message, 
+      Sender: name
+    };
+
+    dispatch(replyOnRecord(_id, msgObj));
+    setMessage("");
+  };  
   return (
     <Form onSubmit={handleOnSubmit}>
         <Form.Label>Update Record</Form.Label>
-        <Form.Text>Please update the record here</Form.Text>
+        <Form.Text> (Please update the record here)</Form.Text>
         <Form.Control 
-        value={msg}
+        value={Message}
         onChange={handleOnChange}
         as="textarea" 
         rows="3"  
@@ -23,8 +45,6 @@ export const UpdateRecord = ({msg, handleOnChange, handleOnSubmit}) => {
 };
 
 UpdateRecord.propTypes = {
-    handleOnChange: PropTypes.func.isRequired,
-    handleOnSubmit: PropTypes.func.isRequired,
-    msg: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
 };
 

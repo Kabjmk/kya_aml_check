@@ -17,12 +17,10 @@ export const userLogin = frmData => {
             sessionStorage.setItem("accessJWT", res.data.accessJWT);
             localStorage.setItem("kycSite", JSON.stringify({refreshJWT: res.data.refreshJWT}));
             }
-
         } catch (error) {
             reject(error)
         }
     });
-
 };
 
 export const fetchUser = () => {
@@ -46,7 +44,6 @@ export const fetchUser = () => {
             reject(error.message);
         }
     });
-
 };
 
 export const userLogout = async () => {
@@ -58,8 +55,7 @@ export const userLogout = async () => {
         });
         
     } catch (error) {
-        console.log(error);
-        
+        console.log(error);   
     }
 };
 

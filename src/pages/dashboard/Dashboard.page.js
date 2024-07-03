@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { RecordsTable } from '../../components/records-table/RecordsTable.comp';
-import records from "../../assets/data/dummy-records.json";
 import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb';
 import { Link } from 'react-router-dom';
+import {fetchAllRecords } from "../record-list/recordAction";
 
 
 export const Dashboard = () => {
+    const dispatch = useDispatch();
+    const {records} = useSelector(state => state.records);
+
+    useEffect(() => {
+      if(!records.length) {
+        dispatch(fetchAllRecords())
+      }
+    }, [records, dispatch])
+    
+    // const pendingRecords = records.filter(row => row.status !== "Closed");
+    const totalRecords = records.length;
+
   return (
     <Container>
         <Row>
@@ -23,8 +36,8 @@ export const Dashboard = () => {
         </Row>
         <Row>
             <Col className="text-center mt-5 mb-2">
-                <div>Total Records: 8,000</div>
-                <div>New Records: 20</div>
+                <div>Total Records: {totalRecords}</div>
+                {/* <div>New Records: {pendingRecords}</div> */}
             </Col>
         </Row>
         <Row>

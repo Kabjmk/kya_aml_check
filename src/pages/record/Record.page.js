@@ -1,35 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Container, Row, Col, Button, Spinner, Alert } from 'react-bootstrap';
 import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb';
 import {RecordHistory} from "../../components/message-history/RecordHistory.comp";
 import {UpdateRecord} from "../../components/update-record/UpdateRecord.comp";
-import records from "../../assets/data/dummy-records.json";
 import { useParams } from 'react-router-dom';
+import { closeRecord, fetchSingleRecord } from '../record-list/recordAction';
+import {resetResponseMsg} from "../record-list/recordsSlice";
 
 //const record = records[0];
 export const Record = () => {
 const {rId} = useParams();
-
-const [message, setMessage] = useState("");//to grab message from update
-const [record, setRecord] = useState("")
+const dispatch = useDispatch();
+const {isLoading, error, selectedRecord, replyRecordError, replyMsg} = useSelector(state => state.records);
 
 useEffect(() => {
-    for (let i = 0; i < records.length; i++) {
-        if(records[i].item === rId) {
-            setRecord(records[i]);
-            continue;
-        }
-        
+    dispatch(fetchSingleRecord(rId));
+
+    return () => {
+        (replyMsg || replyRecordError) && dispatch(resetResponseMsg());
     }
-}, [message, rId]);
+}, [rId, dispatch, replyMsg, replyRecordError]);
 
-const handleOnChange = e => {
-    setMessage(e.target.value)
-};
-
-const handleOnSubmit = () => {
-    alert('form submited');
-}
   return (
     <Container>
         <Row>
@@ -38,13 +30,28 @@ const handleOnSubmit = () => {
             </Col>
         </Row>
         <Row>
+            <Col>
+                {isLoading && <Spinner variant='primary' animation='border'/>}
+                {error && <Alert variant="danger">{error}</Alert>}
+                {replyRecordError && <Alert variant="danger">{replyRecordError}</Alert>}
+                {replyMsg && <Alert variant="success">{replyMsg}</Alert>}  
+            </Col>
+        </Row>
+        <Row>
             <Col className="text-weight-bolder text-secondary"> 
-                <div className="firstName">First Name: {record.First_Name}</div>
-                <div className="middleName">Middle Name: {record.Middle_Name}</div>
-                <div className="lastName">Last Name: {record.Last_Name}</div>
-                <div className="country">Country: {record.Country}</div>
-                <div className="Identification">Identification Number: {record.Identification_Number}</div>
-                <div className="status">Status: {record.Status}</div>
+                <div className="firstName">First Name: {selectedRecord.First_Name}</div>
+                <div className="middleName">Middle Name: {selectedRecord.Middle_Name}</div>
+                <div className="lastName">Last Name: {selectedRecord.Last_Name}</div>
+                <div className="country">Country: {selectedRecord.Country}</div>
+                <div className="Identification">Identification Number: {selectedRecord.Identification_Number}</div>
+                <div className="dateofBirth">Date of Birth: {selectedRecord.DateOfBirth && new Date(selectedRecord.DateOfBirth).toLocaleString()}</div>
+                <div className="status">Status: {selectedRecord.Status}</div>
+            </Col>
+            <Col>
+                <Button variant="outline-info" 
+                onClick={() => dispatch(closeRecord(rId))}
+                disabled = {selectedRecord.status === "Closed"}
+                >Close Record</Button>
             </Col>
             <Col>
                 <Button variant="outline-info">Delete Record</Button>
@@ -52,19 +59,15 @@ const handleOnSubmit = () => {
         </Row>
         <Row className="mt-4">
             <Col>
-                {record.history && <RecordHistory msg={record.history}/>}
+                {selectedRecord.details && (<RecordHistory msg={selectedRecord.details}/>)}
             </Col>
         </Row>
         <hr />
         <Row className="mt-4">
             <Col>
-                <UpdateRecord msg={message} 
-                handleOnChange={handleOnChange}
-                handleOnSubmit={handleOnSubmit}
-                />
+                <UpdateRecord _id = {rId}/>
             </Col>
         </Row>
-
     </Container>
   )
 }

@@ -4,19 +4,18 @@ import "./RecordHistory.style.css";
 
 export const RecordHistory = ({msg}) => {
 
- if(!msg) return null;
+if(!msg) return null;
 
-  return msg.map((row, i)=>
-<div key={i} className="message-history mt-3">
+return msg.map((row, i) => (
+    <div key={i} className="message-history mt-3">
         <div className="send font-weight-bold text-secondary">
-            <div className="updatedate">{row.date}</div>
-            <div className="messageBy">{row.messageBy}</div>
+            <div className="messageBy">{row.Sender}</div>
+            <div className="updatedate">{row.SentAt && new Date(row.SentAt).toLocaleString()}</div>
         </div>
-         <div className="message">{row.message}</div>
-    </div>)
+        <div className="message">{row.Message}</div>
+    </div>));
 };
 
-
 RecordHistory.propTypes = {
-    msg: PropTypes.string.isRequired,
+    msg: PropTypes.array.isRequired,
 };

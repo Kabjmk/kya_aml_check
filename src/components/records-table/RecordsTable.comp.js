@@ -36,7 +36,7 @@ export const RecordsTable = () => {
                 <th>{row.Country}</th>
                 <td>{row.Identification_Number}</td>
                 <th>{row.Status}</th>
-                <th>{row.dateOfbirth}</th> 
+                <th>{row.dateOfbirth && new Date(row.dateOfbirth).toLocaleString()}</th> 
             </tr>)))
             : 
             <tr>
