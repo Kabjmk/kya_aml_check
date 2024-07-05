@@ -25,7 +25,7 @@ export const fetchAllRecords = () => async (dispatch) => {
  //   fetch data from API
  try {
     const result = await getAllRecords();
-    dispatch(fetchRecordSuccess(result.data.result));
+    result.data.result.length && dispatch(fetchRecordSuccess(result.data.result));
  } catch (error) {
     dispatch(fetchRecordFail(error.message))
  }

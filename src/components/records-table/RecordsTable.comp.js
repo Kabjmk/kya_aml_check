@@ -13,7 +13,7 @@ export const RecordsTable = () => {
     if(error) return <h3>{error}</h3>
    
   return (
-    <Table striped border hover>
+    <Table striped bordered hover>
         <thead>
             <tr>
                 <th>#</th>

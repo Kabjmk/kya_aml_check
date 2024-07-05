@@ -1,17 +1,21 @@
 import React, {useState, useEffect} from 'react';
-import { Col, Container, Row, Form, Button } from 'react-bootstrap';
+import { Col, Container, Row, Form, Button, Spinner, Alert } from 'react-bootstrap';
+import {newUserRegistration} from "./registrationAction";
+import { useDispatch, useSelector } from 'react-redux';
 
+
+//initial local state 
 const initiaState = {
-    name: '',
-    email: '',
-    company: '',
-    address: '',
-    phone: '',
-    password: '',
-    confirmPass: '',
+    name: 'Joseph Kabali',
+    email: 'kabjmk@yahoo.co.uk',
+    organisation: 'Mytalu',
+    address: '8th Floor Sunshare Tower Lusaka',
+    phone: '0977770862',
+    password: 'Abcd!235',
+    confirmPass: 'Abcd!235',
 };
 
-//anpther initial state for password
+//another initial state for password
 const passVerificationError = {
     isLengthy: false,
     hasUpper: false,
@@ -22,9 +26,11 @@ const passVerificationError = {
 };
 
 const RegistrationForm = () => {
-
+const dispatch = useDispatch();
 const [newUser, setNewUser] = useState(initiaState);
 const [passwordError, setPasswordError] = useState(passVerificationError);
+
+const {isLoading, status, message} = useSelector(state => state.registration)
 
 useEffect(() => {
  
@@ -57,9 +63,31 @@ const handleOnChnage = e => {
 
 const handleOnSubmit = (e) => {
     e.preventDefault(); 
+    //console.log(newUser);
+    const {
+        name, 
+        organisation, 
+        address, 
+        phone, 
+        email, 
+        password,
+    } = newUser;
 
-    console.log(newUser);
-}
+    const newRegistration = {
+        name, 
+        organisation, 
+        address, 
+        phone, 
+        email, 
+        password,
+    };
+
+    dispatch(newUserRegistration(newRegistration));
+};
+//next steps
+//connect user registration form to backend REST API and manage network state with Redux tookit
+//email user a link to verify their email address
+//create frontend page to handle the email verification that the client recieves in their email
 
   return <Container>
     <Row>
@@ -68,6 +96,9 @@ const handleOnSubmit = (e) => {
         </Col>
     </Row>
     <hr/>
+    <Row> <Col>
+        {message && <Alert variant={status ==='success' ? "success" : "danger"}>{message}</Alert>}
+    </Col></Row>
     <Row>
         <Col>
             <Form onSubmit={handleOnSubmit}>
@@ -82,8 +113,8 @@ const handleOnSubmit = (e) => {
                 </Form.Group>
 
                 <Form.Group >
-                    <Form.Label>Company name</Form.Label>
-                    <Form.Control type="text" name="company" value={newUser.company} onChange={handleOnChnage} placeholder="Company name" />
+                    <Form.Label>Organisation name</Form.Label>
+                    <Form.Control type="text" name="organisation" value={newUser.organisation} onChange={handleOnChnage} placeholder="Organisation name" />
                 </Form.Group>
 
                 <Form.Group >
@@ -92,7 +123,7 @@ const handleOnSubmit = (e) => {
                 </Form.Group>
 
                 <Form.Group >
-                    <Form.Label>Phone nummber</Form.Label>
+                    <Form.Label>Phone number</Form.Label>
                     <Form.Control type="number" name="phone" value={newUser.phone} onChange={handleOnChnage} placeholder="Phone number" />
                 </Form.Group>
                 
@@ -120,6 +151,7 @@ const handleOnSubmit = (e) => {
                 <Button variant="primary" type="submit" disabled={Object.values(passwordError).includes(false)}>
                     Submit
                 </Button>
+                {isLoading && <Spinner variant="info" animation="border"/>}
             </Form>
         </Col>
     </Row>
